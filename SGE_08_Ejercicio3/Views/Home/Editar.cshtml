@@ -1,0 +1,22 @@
+﻿@model MisClases.clsPersona
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    <form method="post" action="/home/Editar">
+        <div>
+            <p style="text-align:left;">Nombre <input id="name" value=@Model.Name name="name" /></p>
+        </div>
+        <div>
+            <p style="text-align:left;">Apellidos @Html.TextBoxFor(Model => Model.Surname) </p>
+        </div>
+        <div>
+            <input type="submit" value="submit" />
+        </div>
+    </form>
+</body>
+</html>
