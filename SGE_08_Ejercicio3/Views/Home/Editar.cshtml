@@ -8,15 +8,30 @@
 </head>
 <body>
     <form method="post" action="/home/Editar">
-        <div>
-            <p style="text-align:left;">Nombre <input id="name" value=@Model.Name name="name" /></p>
-        </div>
-        <div>
-            <p style="text-align:left;">Apellidos @Html.TextBoxFor(Model => Model.Surname) </p>
-        </div>
-        <div>
-            <input type="submit" value="submit" />
-        </div>
+        <p style="text-align:left;">ID Persona @Html.TextBoxFor(Model => Model.IdPersona) 
+        @Html.ValidationMessageFor(model => model.IdPersona)
+        </p>
+        <p style="text-align:left;">
+            Nombre @Html.TextBoxFor(Model => Model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </p>
+        <p style="text-align:left;">
+            Apellidos @Html.TextBoxFor(Model => Model.Surname) 
+            @Html.ValidationMessageFor(model => model.Surname)
+        </p>
+        <p style="text-align:left;">
+            Fecha Nacimiento @Html.TextBox("FechaNacimiento", Model.FechaNacimiento)
+            @Html.ValidationMessageFor(model => model.FechaNacimiento)
+        </p>
+        <p style="text-align:left;">
+            Dirección @Html.TextBoxFor(Model => Model.Direccion) 
+            @Html.ValidationMessageFor(model => model.Direccion)
+        </p>
+        <p style="text-align:left;">
+            Número de teléfono @Html.TextBoxFor(Model => Model.NumeroTelefono) 
+            @Html.ValidationMessageFor(model => model.NumeroTelefono)
+        </p>
+        <input type="submit" value="submit" />
     </form>
 </body>
 </html>

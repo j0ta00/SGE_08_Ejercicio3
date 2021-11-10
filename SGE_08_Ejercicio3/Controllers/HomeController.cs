@@ -11,13 +11,21 @@ namespace SGE_08_Ejercicio3.Controllers
     {
         public IActionResult Editar()
         {
-            clsPersona persona = new clsPersona("juanyo","android >:I");
+            clsPersona persona = new clsPersona();
             return View(persona);
         }
         [HttpPost]
         public IActionResult Editar(clsPersona clsPersona)
         {
-            return View("PersonaModificada",clsPersona);
+            if (!ModelState.IsValid){
+
+                return View(clsPersona);
+
+            }
+            else
+            {
+                return View("PersonaModificada", clsPersona);
+            }
         }
     }
 }
